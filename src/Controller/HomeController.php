@@ -20,4 +20,15 @@ class HomeController extends AbstractController
             'menus' => $menus,
         ]);
     }
+    #[Route('/contact', name: 'app_contact')]
+public function contact(): Response
+{
+    return $this->render('home/contact.html.twig');
+}
+
+#[Route('/horaires', name: 'app_horaires')]
+public function horaires(): Response
+{
+    return $this->render('home/horaires.html.twig');
+}
 }
