@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Horaires — Vite & Gourmand{% endblock %}
+{% block body %}
+<div class="container py-5">
+    <h1 style="color:var(--primary);">🕐 Nos Horaires</h1>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr style="background:var(--primary);color:#fff;">
+                                <th class="p-3">Jour</th>
+                                <th class="p-3">Horaires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="p-3">Lundi</td><td class="p-3">09h00 – 19h00</td></tr>
+                            <tr><td class="p-3">Mardi</td><td class="p-3">09h00 – 19h00</td></tr>
+                            <tr><td class="p-3">Mercredi</td><td class="p-3">09h00 – 19h00</td></tr>
+                            <tr><td class="p-3">Jeudi</td><td class="p-3">09h00 – 19h00</td></tr>
+                            <tr><td class="p-3">Vendredi</td><td class="p-3">09h00 – 19h00</td></tr>
+                            <tr><td class="p-3">Samedi</td><td class="p-3">10h00 – 18h00</td></tr>
+                            <tr><td class="p-3 text-danger fw-bold">Dimanche</td><td class="p-3 text-danger fw-bold">Fermé</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

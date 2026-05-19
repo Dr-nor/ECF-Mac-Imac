@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact — Vite & Gourmand{% endblock %}
+{% block body %}
+<div class="container py-5">
+    <h1 style="color:var(--primary);">📞 Contactez-nous</h1>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4">
+                <h5 class="fw-bold mb-3">Julie & José — Vite & Gourmand</h5>
+                <p><i class="bi bi-envelope me-2" style="color:var(--primary);"></i>julie.jose@vite-gourmand.fr</p>
+                <p><i class="bi bi-telephone me-2" style="color:var(--primary);"></i>05 56 XX XX XX</p>
+                <p><i class="bi bi-geo-alt me-2" style="color:var(--primary);"></i>Bordeaux, 33000</p>
+                <p><i class="bi bi-clock me-2" style="color:var(--primary);"></i>Lun–Ven : 09h–19h / Sam : 10h–18h</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4">
+                <h5 class="fw-bold mb-3">Envoyez-nous un message</h5>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Votre nom">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Votre email">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Votre message"></textarea>
+                </div>
+                <button class="btn w-100" style="background:var(--primary);color:#fff;">
+                    <i class="bi bi-send me-2"></i>Envoyer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
