@@ -28,6 +28,7 @@ return [
     'menu_index' => [[], ['_controller' => 'App\\Controller\\MenuController::index'], [], [['text', '/menus']], [], [], []],
     'menu_show' => [['id'], ['_controller' => 'App\\Controller\\MenuController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/menus']], [], [], []],
     'menu_api_menus' => [[], ['_controller' => 'App\\Controller\\MenuController::filterMenus'], [], [['text', '/menus/api/menus']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\AdminController::dashboard' => [[], ['_controller' => 'App\\Controller\\AdminController::dashboard'], [], [['text', '/admin']], [], [], []],
@@ -40,6 +41,7 @@ return [
     'App\Controller\MenuController::index' => [[], ['_controller' => 'App\\Controller\\MenuController::index'], [], [['text', '/menus']], [], [], []],
     'App\Controller\MenuController::show' => [['id'], ['_controller' => 'App\\Controller\\MenuController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/menus']], [], [], []],
     'App\Controller\MenuController::filterMenus' => [[], ['_controller' => 'App\\Controller\\MenuController::filterMenus'], [], [['text', '/menus/api/menus']], [], [], []],
+    'App\Controller\RegistrationController::register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];

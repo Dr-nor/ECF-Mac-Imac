@@ -80,7 +80,7 @@ class AssetMapperConfig
 
     /**
      * If true, a "dev server" will return the assets from the public directory (true in "debug" mode only by default).
-     * @default true
+     * @default false
      * @param ParamConfigurator|bool $value
      * @return $this
      */

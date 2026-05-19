@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+<p class="text-muted small">Connectez-vous pour passer votre commande</p>{% extends 'base.html.twig' %}
 
 {% block title %}Connexion — Vite & Gourmand{% endblock %}
 
@@ -13,7 +13,7 @@
                     <div class="text-center mb-4">
                         <div style="font-size:2.5rem;">🍽️</div>
                         <h1 class="h4 mt-2" style="color:var(--primary);">Connexion</h1>
-                        <p class="text-muted small">Connectez-vous pour passer votre commande</p>
+                        <p class="text-muted small">Espace réservé à l'équipe Vite & Gourmand</p>
                     </div>
 
                     {% if error %}
@@ -58,16 +58,6 @@
                             <i class="bi bi-box-arrow-in-right me-2"></i>Se connecter
                         </button>
                     </form>
-                    </div>    
-                    <hr class="my-3">
-                    <div class="text-center">
-                        <p class="text-muted small mb-2">Pas encore de compte ?</p>
-                        <a href="{{ path('app_register') }}"
-                           class="btn w-100"
-                           style="border:2px solid var(--primary);color:var(--primary);">
-                            <i class="bi bi-person-plus me-2"></i>Créer un compte
-                        </a>
-                    </div>
 
                 </div>
             </div>

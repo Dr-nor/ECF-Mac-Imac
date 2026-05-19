@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   php:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
       - .:/var/www/html
     networks:

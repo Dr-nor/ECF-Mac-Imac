@@ -169,7 +169,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @default '%env(default::SYMFONY_IDE)%'
+     * @default null
      * @param ParamConfigurator|mixed $value
      * @return $this
      * @deprecated since Symfony 7.4
@@ -691,7 +691,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
      * @template TValue of array|bool
      * @param TValue $value
      * Asset Mapper configuration
-     * @default {"enabled":false,"paths":[],"excluded_patterns":[],"exclude_dotfiles":true,"server":true,"public_prefix":"\/assets\/","missing_import_mode":"warn","extensions":[],"importmap_path":"%kernel.project_dir%\/importmap.php","importmap_polyfill":"es-module-shims","importmap_script_attributes":[],"vendor_dir":"%kernel.project_dir%\/assets\/vendor","precompress":{"enabled":false,"formats":[],"extensions":[]}}
+     * @default {"enabled":false,"paths":[],"excluded_patterns":[],"exclude_dotfiles":true,"server":false,"public_prefix":"\/assets\/","missing_import_mode":"warn","extensions":[],"importmap_path":"%kernel.project_dir%\/importmap.php","importmap_polyfill":"es-module-shims","importmap_script_attributes":[],"vendor_dir":"%kernel.project_dir%\/assets\/vendor","precompress":{"enabled":false,"formats":[],"extensions":[]}}
      * @return \Symfony\Config\Framework\AssetMapperConfig|$this
      * @psalm-return (TValue is array ? \Symfony\Config\Framework\AssetMapperConfig : static)
      * @deprecated since Symfony 7.4
@@ -938,7 +938,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * PHP errors handling configuration
-     * @default {"log":true,"throw":true}
+     * @default {"log":true,"throw":false}
      * @deprecated since Symfony 7.4
      */
     public function phpErrors(array $value = []): \Symfony\Config\Framework\PhpErrorsConfig
@@ -1118,7 +1118,7 @@ class FrameworkConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
     /**
      * Enabled by default when debug is enabled.
-     * @default true
+     * @default false
      * @param ParamConfigurator|bool $value
      * @return $this
      * @deprecated since Symfony 7.4

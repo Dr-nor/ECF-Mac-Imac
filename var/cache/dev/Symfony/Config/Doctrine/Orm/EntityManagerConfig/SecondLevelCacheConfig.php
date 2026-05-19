@@ -64,7 +64,7 @@ class SecondLevelCacheConfig
     }
 
     /**
-     * @default true
+     * @default false
      * @param ParamConfigurator|bool $value
      * @return $this
      */
