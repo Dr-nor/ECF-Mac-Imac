@@ -17,7 +17,6 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts \
 
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
-RUN php bin/console cache:clear --env=prod --no-warmup || true
 
 EXPOSE 80
 
