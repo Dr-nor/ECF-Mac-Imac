@@ -1,11 +1,17 @@
+# telechargement de l'image PHP officielle avec FPM pour exécuter le code backend
 FROM php:8.2-fpm
 
+
+# mise à jour des dépôts et installation des outils système et de l'extension zip
 RUN apt-get update && apt-get install -y \
     git curl zip unzip libzip-dev \
     && docker-php-ext-install pdo pdo_mysql zip
 
+# installation via PECL et activation de l'extension pour la base de données MongoDB
 RUN pecl install mongodb && docker-php-ext-enable mongodb
 
+# importation de Composer depuis son image officielle pour gérer les dépendances PHP
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# mkdir /var/www/html && cd
 WORKDIR /var/www/html
