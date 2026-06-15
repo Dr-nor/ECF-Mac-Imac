@@ -1,58 +1,84 @@
+# specification de la version du format de fichier Docker Compose utilisee
 version: '3.8'
 
+# definition de l'ensemble des conteneurs qui composent l'application
 services:
+  # service contenant l'environnement d'execution PHP
   php:
     build:
+      # l'emplacement du contexte de construction (le dossier courant)
       context: .
+      # utilisation specifique de notre dockerfile de developpement
       dockerfile: Dockerfile.dev
     volumes:
+     # synchronisation en temps reel du code source de mon iMac vers le conteneur
       - .:/var/www/html
     networks:
+    # connexion au reseau interne de l'application
       - vite_gourmand_network
 
+# service contenant le serveur web Nginx
   nginx:
+   # telechargement d'une image legere de nginx basee sur alpine linux
     image: nginx:alpine
     ports:
+    # j'ouvre le port 8080 sur mon iMac qui redirige vers le port 80 du conteneur
       - "8080:80"
     volumes:
+    # partage des fichiers du projet pour que nginx puisse servir les ressources statiques
       - .:/var/www/html
+      # importation de notre configuration nginx personnalisee à la place de celle par defaut
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
+      # force le conteneur php à se lancer obligatoirement AVANT le conteneur nginx
       - php
     networks:
       - vite_gourmand_network
 
+# service de base de donnees relationnelle principale (MariaDB)
   mariadb:
+   # utilisation de la version stable 10.6 de mariadb
     image: mariadb:10.6
     environment:
+     # variables de configuration initiales de la base de donnees
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: vite_gourmand
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
     ports:
+    # j'ouvre le port standard 3306 sur mon iMac pour inspecter ou migrer les donnees
       - "3306:3306"
     networks:
       - vite_gourmand_network
 
+# service de base de donnees NoSQL secondaire (MongoDB)
   mongodb:
+    # utilisation de la version 6 de mongo
     image: mongo:6
     ports:
+    # j'ouvre le port standard 27017 pour les outils d'inspection externes
       - "27017:27017"
     networks:
       - vite_gourmand_network
 
+# outil graphique web pour gerer facilement la base de donnees MariaDB
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
+      # j'ouvre le port 8081 sur mon iMac pour acceder à l'interface depuis mon navigateur
       - "8081:80"
     environment:
+    # liaison technique directe avec le conteneur de base de donnees
       PMA_HOST: mariadb
       MYSQL_ROOT_PASSWORD: root
     depends_on:
+    # force le conteneur mariadb à demarrer obligatoirement avant phpmyadmin
       - mariadb
     networks:
       - vite_gourmand_network
 
+# definition et configuration des reseaux virtuels isoles
 networks:
   vite_gourmand_network:
+  # pilote standard permettant aux conteneurs de communiquer entre eux sur la meme machine
     driver: bridge
