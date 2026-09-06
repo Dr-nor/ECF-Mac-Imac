@@ -2,11 +2,11 @@ USE vite_gourmand;
 
 -- USERS (mots de passe hashés bcrypt = "password123")
 INSERT INTO user (email, password, nom, prenom, actif, role_id) VALUES
-('admin@vite-gourmand.fr',  '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Dupont',  'Julie', 1, 1),
-('employe@vite-gourmand.fr','$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Martin',  'José',  1, 3),
-('client1@gmail.com',       '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Bernard', 'Marie', 1, 2),
-('client2@gmail.com',       '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Petit',   'Paul',  1, 2),
-('client3@gmail.com',       '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Moreau',  'Sophie',1, 2);
+('admin@vite-gourmand.fr', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Dupont', 'Julie', 1, 1),
+('employe@vite-gourmand.fr', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Martin', 'José', 1, 3),
+('client1@gmail.com', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Bernard', 'Marie', 1, 2),
+('client2@gmail.com', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Petit', 'Paul', 1, 2),
+('client3@gmail.com', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Moreau', 'Sophie', 1, 2);
 
 -- MENUS
 INSERT INTO menu (titre, description, nombre_personne_minimum, prix, quantite_restante, theme, regime) VALUES
@@ -14,7 +14,7 @@ INSERT INTO menu (titre, description, nombre_personne_minimum, prix, quantite_re
 ('Menu Mariage',         'Cocktail dinatoire, 3 plats, dessert buffet', 20,  55.00,  5, 'evenement', 'classique'),
 ('Menu Vegetarien',      '100% vegetarien, produits locaux bio',         4,  28.00, 15, 'classique', 'vegetarien'),
 ('Menu Paques',          'Agneau roti, gratin dauphinois, charlotte',    6,  38.00,  8, 'paques',    'classique'),
-('Menu Entreprise',      'Repas affaires, 3 services, cafe inclus',     10,  65.00,  6, 'corporate', 'classique');
+('Menu Entreprise',      'Repas affaires, 3 services, cafe inclus',    10,  65.00,  6, 'corporate', 'classique');
 
 -- PLATS
 INSERT INTO plat (nom, type, menu_id) VALUES
