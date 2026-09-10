@@ -40,7 +40,7 @@ docker exec -i vite-et-gourmand-mariadb-1 mysql -u root -proot vite_gourmand < d
 
 ### Données de connexion par défaut
 - Email : `admin@vite-gourmand.fr`
-- Password : `admin123`
+- Password : `Password`
 
 ## Schéma base de données
 Les fichiers SQL se trouvent dans le dossier `/database` :
