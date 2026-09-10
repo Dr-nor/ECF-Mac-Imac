@@ -40,11 +40,11 @@ services:
    # utilisation de la version stable 10.6 de mariadb
     image: mariadb:10.6
     environment:
-     # variables de configuration initiales de la base de donnees
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: vite_gourmand
-      MYSQL_USER: symfony
-      MYSQL_PASSWORD: symfony
+     # variables de configuration initiales de la base de donnees recuperees depuis le .env
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
     # j'ouvre le port standard 3306 sur mon iMac pour inspecter ou migrer les donnees
       - "3306:3306"
@@ -70,7 +70,7 @@ services:
     environment:
     # liaison technique directe avec le conteneur de base de donnees
       PMA_HOST: mariadb
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     depends_on:
     # force le conteneur mariadb à demarrer obligatoirement avant phpmyadmin
       - mariadb
