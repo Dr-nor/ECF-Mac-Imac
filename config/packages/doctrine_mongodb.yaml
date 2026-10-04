@@ -3,9 +3,9 @@ doctrine_mongodb:
     auto_generate_hydrator_classes: true
     connections:
         default:
-            server: '%env(MONGODB_URI)%'
+            server: 'mongodb://mongo:YPWZBezcoDcybzccJflTvSGoENxCAHgF@mongodb.railway.internal:27017'
             options: {}
-    default_database: '%env(MONGODB_DB)%'
+    default_database: 'default_database: 'vite_gourmand'
     document_managers:
         default:
             auto_mapping: true
