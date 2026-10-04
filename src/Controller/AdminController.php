@@ -41,8 +41,13 @@ class AdminController extends AbstractController
         foreach ($statsByTheme as $theme => &$stats) {
             $stats['prixMoyen'] = round($stats['total'] / $stats['count'], 2);
         }
-        $avisEnAttente = $dm->getRepository(Avis::class)->findBy(['statut' => 'en_attente']);
-        $totalAvis = count($dm->getRepository(Avis::class)->findAll());
+        try {
+    $avisEnAttente = $dm->getRepository(Avis::class)->findBy(['statut' => 'en_attente']);
+    $totalAvis = count($dm->getRepository(Avis::class)->findAll());
+} catch (\Throwable $e) {
+    $avisEnAttente = [];
+    $totalAvis = 0;
+}
         $chartLabels = array_map('ucfirst', array_keys($statsByTheme));
         $chartData   = array_column(array_values($statsByTheme), 'count');
         $chartPrix   = array_column(array_values($statsByTheme), 'prixMoyen');
