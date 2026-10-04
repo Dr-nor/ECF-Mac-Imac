@@ -5,7 +5,7 @@ doctrine_mongodb:
         default:
             server: 'mongodb://mongo:YPWZBezcoDcybzccJflTvSGoENxCAHgF@mongodb.railway.internal:27017'
             options: {}
-    default_database: 'default_database: 'vite_gourmand'
+    default_database: 'vite_gourmand'
     document_managers:
         default:
             auto_mapping: true
